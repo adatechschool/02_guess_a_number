@@ -64,13 +64,17 @@ function didIwin (givenNumber2) {
 
 function gamePlay() {
     askNumberToGuessToUser1();
-    let userEntry = askNumberToUser2();
-    if (didIwin(userEntry)) {
-        alert ("You Win !");
-    } else {
-        alert("Wrong! Choose another number!");
-        
-     }
+    let hasWon = false;
+
+    while (!hasWon) {
+        let userEntry = askNumberToUser2();
+        if (didIwin(userEntry)) {
+            alert ("You Win !");
+            hasWon = true;
+        } else {
+            alert("Wrong! Choose another number!");
+        }
+    }
     
 }
 
